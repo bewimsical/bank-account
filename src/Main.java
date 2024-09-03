@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        DebitAccount dbt1 = new DebitAccount();
+        CreditAccount dbt1 = new CreditAccount();
         DebitAccount dbt2 = new DebitAccount(25);
-        dbt2.deposit(100);
-        dbt2.withdraw(25);
-        System.out.println(dbt2.toString());
+        dbt1.deposit(100);
+        dbt1.withdraw(55);
+        System.out.println(dbt1.toString());
 
     }
 }
