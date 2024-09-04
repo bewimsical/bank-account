@@ -6,6 +6,13 @@ public class Main {
         dbt1.withdraw(55);
         System.out.println(dbt1.toString());
 
+        Loan loan1 = new Loan();
+        loan1.withdraw(100);
+        loan1.printLoanStatement();
+        loan1.deposit(50);
+        loan1.printLoanStatement();
+
+
     }
 }
 

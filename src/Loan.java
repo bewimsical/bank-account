@@ -49,4 +49,13 @@ public class Loan extends Account {
     private double calculateInterest(){
         return getBalance() * this.interestRate;
     }
+
+    public void printLoanStatement(){
+        System.out.println("Current Balance: " + getBalance());
+        System.out.println("Principal Balance: " + this.principal);
+        System.out.println("Interest Balance: " + this.interest);
+        System.out.println("Total amount paid: " + (this.paidInterest + this.paidPrincipal));
+        System.out.println("Principal payments: " + this.paidPrincipal);
+        System.out.println("Interest payments " + this.paidInterest);
+    }
 }
