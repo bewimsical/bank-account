@@ -3,7 +3,7 @@ public class DebitAccount extends Account {
         super();
     }
     DebitAccount(double promo){
-        setBalance(promo);
+        super(promo);
     }
     public boolean deposit(double _amount){
         if (_amount <= 0){
