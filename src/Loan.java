@@ -1,7 +1,9 @@
 public class Loan extends Account {
     private final double interestRate;
+
     private double principal;
     private double interest;
+    //Variables to track payments to principal and interest portions.
     private double paidPrincipal;
     private double paidInterest;
 
@@ -16,7 +18,7 @@ public class Loan extends Account {
         this.principal = 0;
         this.interest = 0;
     }
-
+    //Apply payments, first to interest and then to the principal.
     public boolean deposit(double _amount){
         double remaining = _amount;
         if(_amount > getBalance()){
@@ -43,13 +45,18 @@ public class Loan extends Account {
         this.principal += _amount;
         setBalance(getBalance() + _amount);
         this.interest += calculateInterest();
+        // interest applied to the outstanding balance.
         setBalance(getBalance() + calculateInterest());
         return true;
     }
+    //Calculate interest on the outstanding balance.
     private double calculateInterest(){
         return getBalance() * this.interestRate;
     }
-
+    //Methods to track the total payments made towards both principal and interest
+    public double getInterestPayments(){ return this.paidInterest;}
+    public double getPrincipalPayments(){ return this.paidPrincipal;}
+    //print record of how much has been paid towards the interest, the principal, and the total amount paid.
     public void printLoanStatement(){
         System.out.println("Current Balance: " + getBalance());
         System.out.println("Principal Balance: " + this.principal);
